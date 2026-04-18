@@ -1,116 +1,17 @@
-/* ========================
-   ROOT / DESIGN SYSTEM
-======================== */
-:root {
-  --bg: #0a0a0b;
-  --surface: #141416;
-  --surface-2: #1c1c1f;
-
-  --text: #e6e6e6;
-  --muted: rgba(230,230,230,0.55);
-
-  --accent: #e50914;
-  --accent-dim: #7a0c10;
-
-  --border: rgba(255,255,255,0.08);
-}
-
-/* ========================
-   RESET
-======================== */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-/* ========================
-   BASE
-======================== */
 body {
-  position: relative;
-  z-index: 1;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  background: #fff;
+  color: #111;
 }
 
-/* Cinematic gradient lighting */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(229,9,20,0.08), transparent 40%),
-    radial-gradient(circle at 80% 0%, rgba(120,120,120,0.05), transparent 40%),
-    radial-gradient(circle at 50% 100%, rgba(0,0,0,0.8), transparent 70%);
-}
-
-/* Grain texture overlay */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity: 0.08;
-  mix-blend-mode: overlay;
-}
-
-/* ========================
-   TYPOGRAPHY
-======================== */
-h1 {
-  font-size: clamp(2.8rem, 5vw, 5rem);
-  letter-spacing: -1px;
-  font-weight: 600;
-}
-
-h2 {
-  font-size: 1.8rem;
-  font-weight: 500;
-  letter-spacing: -0.5px;
-  margin-bottom: 40px;
-}
-
-p {
-  max-width: 600px;
-  color: var(--muted);
-}
-
-/* ========================
-   LAYOUT
-======================== */
-section {
-  padding: 140px 8%;
-  border-top: 1px solid var(--border);
-}
-
-/* CENTER ONLY WHERE NEEDED */
-.hero,
-.proof,
-.services,
-.strategy,
-.results,
-.cta,
-footer {
-  text-align: center;
-}
-
-/* ========================
-   NAV
-======================== */
+/* NAV */
 .nav {
   position: fixed;
   width: 100%;
@@ -120,48 +21,27 @@ footer {
   display: flex;
   justify-content: space-between;
   z-index: 1000;
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.nav.scrolled {
-  background: rgba(10,10,11,0.75);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  padding: 14px 40px;
 }
 
 .nav a {
   margin-left: 20px;
   text-decoration: none;
-  color: var(--text);
+  color: #111;
 }
 
-/* Progress bar */
-.progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: var(--accent);
-  width: 0%;
-  z-index: 2000;
-}
-
-/* ========================
-   HERO
-======================== */
+/* HERO */
 .hero {
   height: 100vh;
+  background: url('https://picsum.photos/1600/900') center/cover no-repeat;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: 8%;
-  text-align: left;
-  position: relative;
+  justify-content: center;
+  text-align: center;
 }
 
-.hero-content {
-  max-width: 700px;
+.hero h1 {
+  font-size: 4rem;
+  letter-spacing: -1px;
 }
 
 .hero p {
@@ -169,78 +49,15 @@ footer {
   font-size: 1.2rem;
 }
 
-.hero-cta {
-  margin-top: 30px;
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-/* Subtle red glow interaction */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle, rgba(229,9,20,0.08), transparent 70%);
-  opacity: 0;
-  transition: opacity 1.5s ease;
-}
-
-.hero:hover::after {
-  opacity: 1;
-}
-
-/* ========================
-   BUTTONS
-======================== */
 .btn {
   display: inline-block;
   padding: 12px 24px;
-  border: 1px solid var(--accent-dim);
+  border: 1px solid #111;
   text-decoration: none;
-  color: var(--text);
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
+  color: #111;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-  box-shadow: 0 0 20px rgba(229,9,20,0.4);
-}
-
-.btn.secondary {
-  background: transparent;
-}
-
-/* ========================
-   SECTIONS (DARK ONLY)
-======================== */
-.proof { background: var(--surface); }
-.services { background: var(--surface); }
-.strategy { background: var(--surface-2); }
-.results { background: var(--surface); }
-
-/* ========================
-   PROOF GRID
-======================== */
-.proof {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  padding: 60px 5%;
-}
-
-.proof h3 {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-/* ========================
-   SPLIT
-======================== */
+/* SPLIT */
 .split {
   display: flex;
   min-height: 80vh;
@@ -262,14 +79,89 @@ footer {
   background: url('https://picsum.photos/800/800') center/cover no-repeat;
 }
 
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* IMAGE BREAK */
+.image-break {
+  height: 60vh;
+  background: url('https://picsum.photos/1600/800') center/cover no-repeat;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-item {
+  height: 300px;
+  background: url('https://picsum.photos/600/600') center/cover no-repeat;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.cta h2 {
+  margin-bottom: 20px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  font-size: 0.9rem;
+}
+
+/* ========================
+   PROOF
+======================== */
+.proof {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+
+.proof h3 {
+  margin-bottom: var(--space-1);
+}
+
+/* ========================
+   SPLIT
+======================== */
+.split {
+  display: flex;
+  min-height: 80vh;
+}
+
+.split-text,
+.split-image {
+  flex: 1;
+}
+
+.split-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-6);
+}
+
+.split-image {
+  background: center/cover no-repeat;
+}
+
 /* ========================
    SERVICES
 ======================== */
 .service-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-top: 40px;
+  gap: var(--space-5);
+  margin-top: var(--space-5);
 }
 
 /* ========================
@@ -278,36 +170,36 @@ footer {
 .steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  margin-top: 40px;
+  gap: var(--space-5);
+  margin-top: var(--space-5);
 }
 
 /* ========================
    CASE STUDIES
 ======================== */
 .case-study {
-  margin-top: 80px;
-  padding-bottom: 60px;
+  margin-top: var(--space-6);
+  padding-bottom: var(--space-6);
   border-bottom: 1px solid var(--border);
 }
 
 .case-meta {
-  font-size: 0.8rem;
+  font-size: var(--small);
   text-transform: uppercase;
   letter-spacing: 1px;
   opacity: 0.5;
-  margin-bottom: 10px;
+  margin-bottom: var(--space-2);
 }
 
 .case-tags {
-  margin-top: 20px;
+  margin-top: var(--space-3);
   display: flex;
-  gap: 10px;
+  gap: var(--space-2);
   flex-wrap: wrap;
 }
 
 .case-tags span {
-  font-size: 0.8rem;
+  font-size: var(--small);
   padding: 6px 10px;
   border: 1px solid var(--border);
 }
@@ -318,31 +210,31 @@ footer {
 .results-grid {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
+  gap: var(--space-5);
+  margin-top: var(--space-5);
 }
 
 .results-grid div {
-  max-width: 240px;
+  max-width: 260px;
 }
 
 .results h3 {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 /* ========================
    CTA
 ======================== */
 .cta {
-  padding: 100px 20px;
+  padding: var(--space-6) 20px;
 }
 
 /* ========================
    FOOTER
 ======================== */
 footer {
-  padding: 40px;
-  font-size: 0.9rem;
+  padding: var(--space-4);
+  font-size: var(--small);
 }
 
 /* ========================
@@ -355,10 +247,6 @@ footer {
   transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.fade-in {
-  transition: opacity 0.8s ease;
-}
-
 .show {
   opacity: 1;
   transform: translateY(0);
@@ -367,13 +255,31 @@ footer {
 /* ========================
    RESPONSIVE
 ======================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .proof {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-grid,
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+  section {
+    padding: var(--space-6) 6%;
+  }
+
   .split {
     flex-direction: column;
   }
 
-  .split-text {
-    padding: 40px 20px;
+  .hero {
+    padding-left: 6%;
   }
 
   .hero h1 {
@@ -381,12 +287,9 @@ footer {
   }
 
   .service-grid,
-  .steps {
-    grid-template-columns: 1fr;
-  }
-
+  .steps,
   .proof {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .results-grid {
@@ -395,6 +298,6 @@ footer {
   }
 
   .nav {
-    padding: 15px 20px;
+    padding: var(--space-3);
   }
 }
