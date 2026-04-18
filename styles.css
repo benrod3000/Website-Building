@@ -147,6 +147,14 @@ footer {
   z-index: 2000;
 }
 
+/* Scroll offset for fixed nav */
+#about,
+#case-studies,
+#contact,
+#services {
+  scroll-margin-top: 80px;
+}
+
 /* ========================
    HERO
 ======================== */
@@ -200,15 +208,15 @@ footer {
   text-decoration: none;
   color: var(--text);
   letter-spacing: 0.5px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .btn:hover {
-  transform: translateY(-2px);
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
-  box-shadow: 0 0 20px rgba(229,9,20,0.4);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn:active {
+  transform: scale(0.97);
 }
 
 .btn.secondary {
@@ -272,12 +280,28 @@ footer {
   margin-top: 40px;
 }
 
+.services-footer {
+  margin-top: 60px;
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+}
+
+.services-footer p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.services-footer strong {
+  color: var(--accent);
+}
+
 /* ========================
    STRATEGY
 ======================== */
 .steps {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 40px;
   margin-top: 40px;
 }
@@ -359,9 +383,94 @@ footer {
   transition: opacity 0.8s ease;
 }
 
-.show {
+.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* =========================
+   MICRO INTERACTIONS SYSTEM
+========================= */
+
+/* Smooth global motion */
+* {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* -------------------------
+   BUTTON INTELLIGENCE
+------------------------- */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255,255,255,0.08);
+}
+
+.btn:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+/* -------------------------
+   TEXT REVEAL (UPGRADED)
+------------------------- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  filter: blur(6px);
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+  transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* -------------------------
+   SERVICE CARD DEPTH
+------------------------- */
+.service {
+  position: relative;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.service:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.04);
+}
+
+/* Dim other cards when hovering */
+.service-grid:hover .service {
+  opacity: 0.5;
+}
+
+.service-grid .service:hover {
+  opacity: 1;
+}
+
+/* -------------------------
+   CURSOR AWARENESS (SUBTLE)
+------------------------- */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: var(--mouse-y, 50%);
+  left: var(--mouse-x, 50%);
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+
+  background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 60%);
+  transform: translate(-50%, -50%);
+  filter: blur(60px);
+  transition: all 0.2s ease;
 }
 
 /* ========================
