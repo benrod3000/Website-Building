@@ -1,0 +1,3 @@
+- [ ] Project is a static resume website starter.
+- [ ] Files include `index.html`, `styles.css`, `script.js`, and `README.md`.
+- [ ] User can edit the content and open `index.html` in a browser.
