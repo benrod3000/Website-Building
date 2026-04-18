@@ -88,3 +88,30 @@ function animate() {
 }
 
 animate();
+
+/* =========================
+   SYSTEMS
+========================= */
+
+const systems = document.getElementById("systems");
+const blocks = document.querySelectorAll(".system-block");
+const path = document.querySelector(".flow-path");
+
+window.addEventListener("scroll", () => {
+  const rect = systems.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  const progress = Math.min(
+    Math.max((windowHeight - rect.top) / (windowHeight + rect.height), 0),
+    1
+  );
+
+  /* animate line */
+  path.style.strokeDashoffset = 100 - (progress * 100);
+
+  /* activate blocks */
+  blocks.forEach((block, i) => {
+    const threshold = (i + 1) / blocks.length;
+    block.classList.toggle("active", progress >= threshold - 0.2);
+  });
+});

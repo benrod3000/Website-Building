@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ben Rodriguez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -22,11 +25,12 @@
 
   <!-- HERO -->
   <section class="hero fade-up">
+    <div class="hero-bg-text" aria-hidden="true">BEN</div>
     <div class="hero-content">
       <h1>Growth systems that turn attention into ownership</h1>
       <p>
         I work with creators, founders, and brands to build scalable systems across content, paid media, and digital infrastructure.
-        Not just visibility—real growth that compounds.
+        Not just visibility real growth that compounds.
       </p>
 
       <div class="hero-cta">
@@ -35,6 +39,24 @@
       </div>
     </div>
   </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span>GROWTH STRATEGY</span><span class="dot">·</span>
+      <span>CONTENT SYSTEMS</span><span class="dot">·</span>
+      <span>PAID MEDIA</span><span class="dot">·</span>
+      <span>AUDIENCE OWNERSHIP</span><span class="dot">·</span>
+      <span>DISTRIBUTION</span><span class="dot">·</span>
+      <span>CREATIVE DIRECTION</span><span class="dot">·</span>
+      <span>GROWTH STRATEGY</span><span class="dot">·</span>
+      <span>CONTENT SYSTEMS</span><span class="dot">·</span>
+      <span>PAID MEDIA</span><span class="dot">·</span>
+      <span>AUDIENCE OWNERSHIP</span><span class="dot">·</span>
+      <span>DISTRIBUTION</span><span class="dot">·</span>
+      <span>CREATIVE DIRECTION</span><span class="dot">·</span>
+    </div>
+  </div>
 
   <!-- PROOF / CREDIBILITY -->
   <section class="proof fade-up">
@@ -113,31 +135,68 @@
 
     <div class="service-grid">
 
-      <div class="service fade-up" style="transition-delay: 0.1s">
+
+      <div class="service fade-up" style="--i: 1">
+        <!-- growth chart arrow -->
+        <div class="service-icon">
+        <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6,34 14,24 21,28 34,12"/>
+          <polyline points="28,10 34,12 32,18"/>
+        </svg>
+        </div>
         <h3>Growth Strategy</h3>
         <p>
           Turn attention into momentum. I define your positioning, identify your audience, and build a strategy that actually cuts through.
-          No guesswork—just clear direction built for modern platforms.
+          No guesswork just clear direction built for modern platforms.
         </p>
       </div>
 
-      <div class="service fade-up" style="transition-delay: 0.2s">
+      <div class="service fade-up" style="--i: 2">
+        <!-- stacked lines with loop arrow -->
+        <div class="service-icon">
+        <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="6" y1="14" x2="28" y2="14"/>
+          <line x1="6" y1="22" x2="24" y2="22"/>
+          <line x1="6" y1="30" x2="28" y2="30"/>
+          <path d="M32,17 A7,7 0 1,1 32,27"/>
+          <polyline points="30,25 32,27 34,25"/>
+        </svg>
+        </div>
         <h3>Content Systems</h3>
         <p>
           Stop chasing ideas. Start running a system. I design repeatable content frameworks that keep you consistent, visible,
-          and growing—without burnout.
+          and growing without burnout.
         </p>
       </div>
 
-      <div class="service fade-up" style="transition-delay: 0.3s">
+      <div class="service fade-up" style="--i: 3">
+        <!-- megaphone -->
+        <div class="service-icon">
+        <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6,18 L6,26 L14,26 L28,34 L28,10 L14,18 Z"/>
+          <line x1="14" y1="26" x2="14" y2="34"/>
+          <path d="M32,18 Q36,22 32,26"/>
+        </svg>
+        </div>
         <h3>Paid Campaigns</h3>
         <p>
-          Don’t just post—amplify. I build and manage Meta & YouTube ad campaigns that expand your reach, attract the right audience,
+          Don’t just post amplify. I build and manage Meta & YouTube ad campaigns that expand your reach, attract the right audience,
           and create powerful retargeting loops.
         </p>
       </div>
 
-      <div class="service fade-up" style="transition-delay: 0.4s">
+      <div class="service fade-up" style="--i: 4">
+        <!-- browser window -->
+        <div class="service-icon">
+        <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="8" width="36" height="28" rx="2"/>
+          <line x1="4" y1="16" x2="40" y2="16"/>
+          <circle cx="9" cy="12" r="1.5"/>
+          <circle cx="15" cy="12" r="1.5"/>
+          <line x1="20" y1="25" x2="34" y2="25"/>
+          <line x1="20" y1="30" x2="30" y2="30"/>
+        </svg>
+        </div>
         <h3>Web Design & Digital Presence</h3>
         <p>
           Attention needs somewhere to land. I create clean, conversion-focused websites that turn visitors into subscribers,
@@ -145,19 +204,74 @@
         </p>
       </div>
 
-      <div class="service fade-up" style="transition-delay: 0.5s">
+      <div class="service fade-up" style="--i: 5">
+        <!-- globe/network -->
+        <div class="service-icon">
+        <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="22" cy="22" r="16"/>
+          <ellipse cx="22" cy="22" rx="7" ry="16"/>
+          <line x1="6" y1="22" x2="38" y2="22"/>
+          <line x1="8" y1="14" x2="36" y2="14"/>
+          <line x1="8" y1="30" x2="36" y2="30"/>
+        </svg>
+        </div>
         <h3>Domain & Hosting Setup</h3>
         <p>
           Remove technical friction. I handle your domain, hosting, and backend setup so everything runs fast, secure, and seamless.
         </p>
       </div>
 
-      <div class="service fade-up" style="transition-delay: 0.6s">
+      <div class="service fade-up" style="--i: 6">
+        <!-- envelope -->
+        <div class="service-icon">
+        <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="4" y="10" width="36" height="24" rx="2"/>
+          <polyline points="4,10 22,26 40,10"/>
+          <line x1="4" y1="34" x2="15" y2="23"/>
+          <line x1="40" y1="34" x2="29" y2="23"/>
+        </svg>
+        </div>
         <h3>Newsletter Systems</h3>
         <p>
-          Own your audience. I build email capture systems, automations, and campaigns that give you direct access to your audience—
+          Own your audience. I build email capture systems, automations, and campaigns that give you direct access to your audience 
           no algorithm required.
         </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SYSTEMS -->
+  <section class="systems" id="systems">
+
+    <div class="systems-bg">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path class="flow-path"
+          d="M10,50
+             C25,10 35,10 50,50
+             C65,90 75,90 90,50"
+        />
+      </svg>
+    </div>
+
+    <div class="systems-content">
+
+      <h2>What I Build</h2>
+
+      <div class="system-block" style="--x: 10; --y: 50;">
+        <h3>Audience Growth Systems</h3>
+        <p>Structured strategies that grow and sustain attention across digital platforms.</p>
+      </div>
+
+      <div class="system-block" style="--x: 50; --y: 50;">
+        <h3>Campaign Systems</h3>
+        <p>End-to-end frameworks for launching and scaling creative releases.</p>
+      </div>
+
+      <div class="system-block" style="--x: 90; --y: 50;">
+        <h3>Distribution Strategy</h3>
+        <p>Cross-platform systems that turn attention into long-term audience engagement.</p>
       </div>
 
     </div>
@@ -171,27 +285,27 @@
     <div class="steps">
 
       <div>
-        <h3>01 — Positioning</h3>
+        <h3>01   Positioning</h3>
         <p>Define clarity. Audience, message, and direction.</p>
       </div>
 
       <div>
-        <h3>02 — Systems</h3>
+        <h3>02   Systems</h3>
         <p>Build content and growth frameworks that scale.</p>
       </div>
 
       <div>
-        <h3>03 — Amplification</h3>
+        <h3>03   Amplification</h3>
         <p>Use paid media and distribution to expand reach.</p>
       </div>
 
       <div>
-        <h3>04 — Optimization</h3>
+        <h3>04   Optimization</h3>
         <p>Refine based on performance. Double down on what works.</p>
       </div>
 
       <div>
-        <h3>05 — Ownership</h3>
+        <h3>05   Ownership</h3>
         <p>Capture audience through web and email systems.</p>
       </div>
 
@@ -270,7 +384,7 @@
   <section id="contact" class="cta fade-in">
     <h2>Let’s build your growth system</h2>
     <p>
-      If you're serious about scaling your audience, brand, or business—let’s talk.
+      If you're serious about scaling your audience, brand, or business let’s talk.
     </p>
 
     <div class="hero-cta">
