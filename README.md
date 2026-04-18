@@ -1,4 +1,4 @@
-# Clayton Carroll Resume Website
+# Ben Rodriguez Resume Website
 
 A clean section-based resume framework with generous spacing and a strong visual hierarchy.
 
